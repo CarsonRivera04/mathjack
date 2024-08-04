@@ -1,0 +1,87 @@
+:root {
+  --felt: #127524;
+  --wood: #332407;
+  --ivory: #f9faf7;
+
+  --black-cards: black;
+  --red-cards: red;
+}
+body {
+  position: relative;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.table {
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+  background-color: var(--felt);
+  border: 5px solid var(--wood);
+  box-shadow: inset 10px 10px 17px 1px rgba(255, 255, 255, 0.1);
+}
+.workroom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 50vw;
+  height: 50vh;
+  background-color: white;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.spade, .club {
+  --font-color: var(--black-cards);
+}
+.diamond, .heart {
+  --font-color: var(--red-cards);
+}
+.card {
+  --font-color: var(--black-cards);
+
+  position: relative;
+
+  width: 8.5rem;
+  height: 12rem;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: var(--ivory);
+  border: 1px solid lightgray;
+
+  color: var(--font-color);
+}
+.identity {
+  --x: 10px;
+  --y: 10px;
+  position: absolute;
+
+  top: var(--x);
+  left: var(--y);
+
+  display: flex; 
+  flex-direction: column; 
+}
+.number {
+  font-size: 1.5rem;
+}
+.suit {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+.identity.flipped {
+  top: auto;
+  left: auto;
+  bottom: var(--y);
+  right: var(--x);
+  transform: rotate(0.5turn);
+}
+
