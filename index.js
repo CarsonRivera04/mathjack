@@ -56,7 +56,7 @@ function myMove3(callback) {
       if (callback) callback(); 
     } else {
       if (xpos < temp) xpos += 4; 
-      if (ypos > -100) ypos -= 1; 
+      if (ypos > -100) ypos -= 2; 
       elem.style.right = xpos + "px"; 
       elem.style.bottom = ypos + "%"; 
     }
@@ -79,7 +79,7 @@ function myMove4(callback) {
       if (callback) callback(); 
     } else {
       if (xpos < temp) xpos += 4; 
-      if (ypos < 100) ypos += 1; 
+      if (ypos < 100) ypos += 2; 
       elem.style.right = xpos + "px"; 
       elem.style.bottom = ypos + "%"; 
     }
