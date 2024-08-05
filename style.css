@@ -21,8 +21,16 @@
 #shoe-container {
   position: relative; 
   height: calc(11.2rem + 32px); 
+  width: 100%;
 }
-#shoe-container .card {
+#shoe-container .card:nth-child(1) {
+  position: absolute; 
+  right: 0; 
+  bottom: 0;
+  display: none; 
+  z-index: 2;
+}
+#shoe-container .card:nth-child(2) {
   position: absolute; 
   background-color: #333; 
   border-radius: 0; 
@@ -40,9 +48,11 @@
   border-radius: 0 25px 25px 0;
   background-size: 250%;
   background-position: left; 
+  /*
   border-style: solid solid solid none; 
   border-color: lightgray; 
   border-width: 1px;
+  */
 }
 .card {
   width: 8rem; 
