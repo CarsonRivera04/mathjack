@@ -33,7 +33,7 @@
 #shoe-container .card:nth-child(2) {
   position: absolute; 
   background-color: #333; 
-  border-radius: 0; 
+  border-radius: 10px; 
   right: 0; 
   z-index: 1;
 }
@@ -48,11 +48,9 @@
   border-radius: 0 25px 25px 0;
   background-size: 250%;
   background-position: left; 
-  /*
-  border-style: solid solid solid none; 
-  border-color: lightgray; 
-  border-width: 1px;
-  */
+}
+#card1, #card2, #card3, #card4 {
+  visibility: hidden;
 }
 .card {
   width: 8rem; 

@@ -10,6 +10,7 @@ function myMove1(callback) {
       clearInterval(id);
       elem.style.right = 0; 
       elem.style.bottom = 0; 
+      document.getElementById("card1").style.visibility = "visible"; 
       if (callback) callback(); 
     } else {
       if (xpos < 50) xpos += 1; 
@@ -31,6 +32,7 @@ function myMove2(callback) {
       clearInterval(id);
       elem.style.right = 0; 
       elem.style.bottom = 0; 
+      document.getElementById("card2").style.visibility = "visible"; 
       if (callback) callback(); 
     } else {
       if (xpos < 50) xpos += 1; 
@@ -53,6 +55,7 @@ function myMove3(callback) {
       clearInterval(id);
       elem.style.right = 0; 
       elem.style.bottom = 0; 
+      document.getElementById("card3").style.visibility = "visible"; 
       if (callback) callback(); 
     } else {
       if (xpos < temp) xpos += 4; 
@@ -76,6 +79,7 @@ function myMove4(callback) {
       elem.style.right = 0; 
       elem.style.bottom = 0; 
       elem.style.display = "none"; 
+      document.getElementById("card4").style.visibility = "visible"; 
       if (callback) callback(); 
     } else {
       if (xpos < temp) xpos += 4; 
