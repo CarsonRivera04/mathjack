@@ -1,3 +1,57 @@
+
+class Card {
+  constructor(rank, suit) {
+    this.rank = rank; 
+    this.suit = suit; 
+  }
+  cardCount() {
+    switch(this.rank) {
+      case 2: 
+      case 3: 
+      case 4: 
+      case 5: 
+      case 6: 
+        return 1; 
+        break; 
+      case 7:
+      case 8:
+      case 9:
+        return 0; 
+        break; 
+      case 10: 
+      case 11: 
+      case 12: 
+      case 13: 
+      case 1: 
+        return -1; 
+        break; 
+    }
+  }
+}
+// user should pick this number 
+let numOfDecks = 2; 
+const deck = []; 
+for (let i = 0; i < 4; i++) {
+  for (let j = 1; j <= 13; j++) {
+    switch(i) {
+      case 0: 
+        deck.push(new Card(j, "hearts")); 
+        break; 
+      case 1: 
+        deck.push(new Card(j, "clubs")); 
+        break; 
+      case 2: 
+        deck.push(new Card(j, "diamonds")); 
+        break; 
+      case 3: 
+        deck.push(new Card(j, "spades")); 
+        break; 
+    }
+  }
+}
+const shuffle = require('fisher-yates');
+console.log(shuffle(deck)); 
+
 function myMove1(callback) {
   let id = null;
   const elem = document.getElementById("animate");   
