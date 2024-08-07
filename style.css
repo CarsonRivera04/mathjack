@@ -30,15 +30,19 @@
 }
 #buttons {
   position: absolute; 
-  height: 50%; 
-  bottom: 25%; 
+  height: 75%; 
+  bottom: 12.5%; 
   width: calc(16rem + 40px);
   left: calc(50% - (8rem + 20px));
   box-shadow: 5px 5px black;
 }
+.label {
+  height: 15%;
+  background-color: magenta; 
+}
 .buttonrow {
   display: flex;
-  height: 50%; 
+  height: 35%; 
   border-collapse: collapse; 
   padding: 0;
 }

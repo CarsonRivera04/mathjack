@@ -1,4 +1,3 @@
-
 class Card {
   constructor(rank, suit) {
     this.rank = rank; 
@@ -28,8 +27,7 @@ class Card {
     }
   }
 }
-// user should pick this number 
-let numOfDecks = 2; 
+
 const deck = []; 
 for (let i = 0; i < 4; i++) {
   for (let j = 1; j <= 13; j++) {
@@ -49,9 +47,47 @@ for (let i = 0; i < 4; i++) {
     }
   }
 }
-const shuffle = require('fisher-yates');
-console.log(shuffle(deck)); 
 
+function Deal() {
+  for (let i = 1; i <= 4; i++) {
+    let str = "card" + i.toString(); 
+    document.getElementById(str).style.visibility = "hidden"; 
+  }
+  myMove(); 
+  for (let i = 1; i <= 3; i++) {
+    let str = "card" + i.toString(); 
+    let elem = document.getElementById(str);
+    let rank = deck.pop().rank; 
+    switch(rank) {
+      case 1: 
+        elem.getElementsByClassName("rank")[0].innerHTML = 'A'; 
+        elem.getElementsByClassName("rank")[1].innerHTML = 'A'; 
+        break; 
+      case 11: 
+        elem.getElementsByClassName("rank")[0].innerHTML = 'J'; 
+        elem.getElementsByClassName("rank")[1].innerHTML = 'J'; 
+        break; 
+      case 12: 
+        elem.getElementsByClassName("rank")[0].innerHTML = 'Q'; 
+        elem.getElementsByClassName("rank")[1].innerHTML = 'Q'; 
+        break; 
+      case 13: 
+        elem.getElementsByClassName("rank")[0].innerHTML = 'K'; 
+        elem.getElementsByClassName("rank")[1].innerHTML = 'K'; 
+        break; 
+      default: 
+        elem.getElementsByClassName("rank")[0].innerHTML = rank; 
+        elem.getElementsByClassName("rank")[1].innerHTML = rank; 
+        break; 
+    }
+  }
+}
+
+function Hit() {
+  
+}
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 function myMove1(callback) {
   let id = null;
   const elem = document.getElementById("animate");   
@@ -153,3 +189,6 @@ function myMove() {
     });
   });
 }
+
+
+
