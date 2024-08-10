@@ -32,20 +32,20 @@
     <div id="shoe-container">
       <div id="buttons">
         <div class="buttonrow">
-          <button class="button" id="deal" onclick="Deal()">DEAL</button>
+          <button class="button" id="deal" onclick="Deal(hp, deck)">DEAL</button>
           <div class="panel" id="rightwrong"></div>
           <button class="button" id="hit" onclick="PlayerChoice('hit', hp, hw)">HIT</button>
           <button class="button" id="stand" onclick="PlayerChoice('stand', hp, hw)">STAND</button>
         </div>
         <div class="buttonrow">
-          <button class="button" id="reset" onclick="Reset()">RESET</button>
+          <button class="button" id="reset" onclick="Reset(hp, hw, deck)">RESET</button>
           <div class="panel" id="stats"></div>
           <button class="button" id="double" onclick="PlayerChoice('double', hp, hw)">DOUBLE</button>
           <button class="button" id="split" onclick="PlayerChoice('split', hp, hw)">SPLIT</button>
         </div>
       </div>
       <div id="animate" class="card back"></div>
-      <div class="card"></div>
+      <div id="greyshoe" class="card"></div>
       <div id="circle"></div>
     </div>
     

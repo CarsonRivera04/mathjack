@@ -1,3 +1,4 @@
+// alert(window.innerHeight);
 class Card {
   constructor(rank, suit) {
     this.rank = rank; 
@@ -29,7 +30,29 @@ Shuffle(deck);
 let hp = { key: 0 }; 
 let hw = { key: 0 }; 
 
-function Deal() {
+function Deal(hp, deck) {
+  if (hp.key % 8 == 0 && hp.key != 0) {
+    for (let i = 0; i < 4; i++) {
+      for (let j = 1; j <= 13; j++) {
+        switch(i) {
+          case 0: 
+            deck.push(new Card(j, "hearts")); 
+            break; 
+          case 1: 
+            deck.push(new Card(j, "clubs")); 
+            break; 
+          case 2: 
+            deck.push(new Card(j, "diamonds")); 
+            break; 
+          case 3: 
+            deck.push(new Card(j, "spades")); 
+            break; 
+        }
+      }
+    }
+    Shuffle(deck); 
+  }
+  document.getElementById("deal").style.visibility = "hidden"; 
   for (let i = 1; i <= 4; i++) {
     let str = "card" + i.toString(); 
     document.getElementById(str).style.visibility = "hidden"; 
@@ -85,6 +108,42 @@ function Deal() {
   }
 }
 
+function Reset(hp, hw, deck) {
+  hp.key = 0; 
+  hw.key = 0;
+  for (let i = 0; i < 4; i++) {
+    for (let j = 1; j <= 13; j++) {
+      switch(i) {
+        case 0: 
+          deck.push(new Card(j, "hearts")); 
+          break; 
+        case 1: 
+          deck.push(new Card(j, "clubs")); 
+          break; 
+        case 2: 
+          deck.push(new Card(j, "diamonds")); 
+          break; 
+        case 3: 
+          deck.push(new Card(j, "spades")); 
+          break; 
+      }
+    }
+  }
+  Shuffle(deck); 
+
+  document.getElementById("hit").style.display = "none"; 
+  document.getElementById("stand").style.display = "none"; 
+  document.getElementById("double").style.display = "none"; 
+  document.getElementById("split").style.display = "none"; 
+  document.getElementById("deal").style.visibility = "visible"; 
+  document.getElementsByClassName("panel")[0].style.display = "none"; 
+  document.getElementsByClassName("panel")[1].style.display = "none"; 
+  for (let i = 1; i <= 4; i++) {
+    let str = "card" + i.toString(); 
+    document.getElementById(str).style.visibility = "hidden"; 
+  }
+}
+
 function PlayerChoice(choice, hp, hw) {
   let dcard = document.getElementById("card2").getElementsByTagName("p")[0].innerHTML;
   switch(dcard) {
@@ -129,6 +188,7 @@ function PlayerChoice(choice, hp, hw) {
   document.getElementById("stand").style.display = "none"; 
   document.getElementById("double").style.display = "none"; 
   document.getElementById("split").style.display = "none"; 
+  document.getElementById("deal").style.visibility = "visible"; 
   const correct = CorrectMove(dcard, pcard1, pcard2); 
   document.getElementById("rightwrong").style.display = "block"; 
   const elem1 = document.getElementById("rightwrong");
