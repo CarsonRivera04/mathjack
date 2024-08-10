@@ -10,21 +10,18 @@
 </head>
 <body>
   <div id="table">
-
-    <div id="navbar">
-    </div>
-
+    <div id="filler"></div>
     <div class="playarea">
 
-      <div id="card2" class="card diamond"> 
+      <div id="card2" class="card"> 
         <div class="identity">
-          <p class="rank">10</p>
-          <img class="suit" src="./icons/diamonds.png">
+          <p class="rank"></p>
+          <img class="suit" src="">
         </div>
-        <div class="flexbox"><img class="suit-image" src="./icons/diamonds.png"></div>
+        <div class="flexbox"><img class="suit-image" src=""></div>
         <div class="identity flipped">
-          <p class="rank">10</p>
-          <img class="suit" src="./icons/diamonds.png">
+          <p class="rank"></p>
+          <img class="suit" src="">
         </div>
       </div> 
 
@@ -34,18 +31,18 @@
 
     <div id="shoe-container">
       <div id="buttons">
-        <div class="label"></div>
         <div class="buttonrow">
-          <button class="button" onclick="Deal()" style="background-color: lightgray;">DEAL</button>
-          <button class="button" style="background-color: yellow;">HIT</button>
-          <button class="button" style="background-color: red;">STAND</button>
+          <button class="button" id="deal" onclick="Deal()">DEAL</button>
+          <div class="panel" id="rightwrong"></div>
+          <button class="button" id="hit" onclick="PlayerChoice('hit', hp, hw)">HIT</button>
+          <button class="button" id="stand" onclick="PlayerChoice('stand', hp, hw)">STAND</button>
         </div>
         <div class="buttonrow">
-          <button class="button" style="background-color: pink;">SPLIT</button>
-          <button class="button" style="background-color: orange;">DOUBLE</button>
-          <button class="button" style="background-color: blue;">RESET</button>
+          <button class="button" id="reset" onclick="Reset()">RESET</button>
+          <div class="panel" id="stats"></div>
+          <button class="button" id="double" onclick="PlayerChoice('double', hp, hw)">DOUBLE</button>
+          <button class="button" id="split" onclick="PlayerChoice('split', hp, hw)">SPLIT</button>
         </div>
-        <div class="label"></div>
       </div>
       <div id="animate" class="card back"></div>
       <div class="card"></div>
@@ -55,27 +52,27 @@
 
     <div class="playarea">
 
-      <div id="card1" class="card heart"> 
+      <div id="card1" class="card"> 
         <div class="identity">
-          <p class="rank">6</p>
-          <img class="suit" src="./icons/hearts.png">
+          <p class="rank"></p>
+          <img class="suit" src="">
         </div>
-        <div class="flexbox"><img class="suit-image" src="./icons/hearts.png"></div>
+        <div class="flexbox"><img class="suit-image" src=""></div>
         <div class="identity flipped">
-          <p class="rank">6</p>
-          <img class="suit" src="./icons/hearts.png">
+          <p class="rank"></p>
+          <img class="suit" src="">
         </div>
       </div> 
 
-      <div id="card3" class="card spade"> 
+      <div id="card3" class="card"> 
         <div class="identity">
-          <p class="rank">K</p>
-          <img class="suit" src="./icons/spades.png">
+          <p class="rank"></p>
+          <img class="suit" src="">
         </div>
-        <div class="flexbox"><img class="suit-image" src="./icons/spades.png"></div>
+        <div class="flexbox"><img class="suit-image" src=""></div>
         <div class="identity flipped">
-          <p class="rank">K</p>
-          <img class="suit" src="./icons/spades.png">
+          <p class="rank"></p>
+          <img class="suit" src="">
         </div>
       </div> 
 
