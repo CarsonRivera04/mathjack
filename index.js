@@ -207,7 +207,7 @@ function PlayerChoice(choice, hp, hw) {
     elem1.style.backgroundColor = "red"; 
   }
   document.getElementById("stats").style.display = "block";
-  document.getElementById("stats").innerHTML = "You have played " + hw.key + '/' + hp.key + " correctly!";
+  document.getElementById("stats").innerHTML = "You have played " + hw.key + '/' + hp.key + " hands correctly!";
 }
 
 // animates first card 
