@@ -3,6 +3,7 @@
   padding: 0;
   border: 0;
 }
+/* green felt table */ 
 #table {
   min-height: 100vh;
   width: 100vw;
@@ -12,15 +13,18 @@
   box-shadow: inset 10px 10px 17px 1px rgba(255, 255, 255, 0.1);
   box-sizing: border-box; 
 }
+/* for centering vertically */ 
 #filler {
   height: 0px; 
   width: 100%; 
 }
+/* where the cards are */ 
 .playarea {
   position: relative; 
   display: flex;
   justify-content: center; 
 }
+/* middle row with shoe and buttons */ 
 #shoe-container {
   position: relative; 
   height: calc(11.2rem + 32px); 
@@ -32,8 +36,8 @@
   bottom: calc(12.5% - 10px); 
   width: calc(16rem + 40px);
   left: calc(50% - (8rem + 30px));
-  border: 10px solid #332407; 
-  background-color: #332407; 
+  border: 10px solid #38598b; 
+  background-color: #38598b; 
   border-radius: 10px;
 }
 .buttonrow {
@@ -44,49 +48,55 @@
 }
 .button {
   width: 33.33%;
-  color: white; 
   font-size: 18px;
   font-weight: 600;
   border: 1px solid #332407;
+  display: none; 
+  color: white; 
+  background-color: #2C3E50;
 }
 .panel {
   width: 66.67%; 
+  background-color: #2C3E50; 
   color: white; 
   font-size: 18px; 
   font-weight: 600;
-  border: 1px solid #332407;
+  border: 5px solid lightgray;
   box-sizing: border-box;
   padding: 5px;
   display: none; 
 }
+#rightwrong {
+  border-top-right-radius: 10px; 
+}
+#stats {
+  border-bottom-right-radius: 10px;
+}
 #deal {
-  background-color: lightgray; 
   border-top-left-radius: 10px; 
-  color: black;
+  border: 5px solid lightgray; 
+  display: block; 
 }
 #hit {
-  background-color: #007144;
-  display: none; 
+  border: 5px solid #ff5d9e; 
 }
 #stand {
-  background-color: #c7011a; 
+  border: 5px solid #8f71ff; 
   border-top-right-radius: 10px;
-  display: none; 
 }
 #reset {
-  background-color: lightgray; 
   border-bottom-left-radius: 10px; 
-  color: black;
+  border: 5px solid lightgray; 
+  display: block; 
 }
 #double {
-  background-color: #011ac7;
-  display: none; 
+  border: 5px solid #82acff; 
 }
 #split {
-  background-color: #c7ae01;
+  border: 5px solid #8bffff; 
   border-bottom-right-radius: 10px;
-  display: none; 
 }
+/* shoe on right side of the screen */ 
 #shoe-container .card:nth-child(2) {
   position: absolute; 
   right: 0; 
@@ -160,10 +170,34 @@
   right: 5px; 
   transform: rotate(0.5turn); 
 }
-
+/* only shows shoe when screen is wide */ 
 @media screen and (min-width: 660px) {
   #greyshoe, #circle {
     visibility: visible; 
+  }
+}
+@media screen and (min-width: 1000px) {
+  .button:hover {
+    cursor: pointer; 
+    color: black; 
+  }
+  #deal:hover {
+    background-color: lightgray; 
+  }
+  #reset:hover {
+    background-color: lightgray; 
+  }
+  #hit:hover {
+    background-color: #ff5d9e;
+  }
+  #stand:hover {
+    background-color: #8f71ff; 
+  }
+  #double:hover {
+    background-color: #82acff; 
+  }
+  #split:hover {
+    background-color: #8bffff; 
   }
 }
 @media screen and (min-height: 650px) {

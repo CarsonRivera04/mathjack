@@ -1,4 +1,3 @@
-// alert(window.innerHeight);
 class Card {
   constructor(rank, suit) {
     this.rank = rank; 
@@ -6,6 +5,7 @@ class Card {
   }
 }
 
+// creates shuffled deck of cards 
 const deck = []; 
 for (let i = 0; i < 4; i++) {
   for (let j = 1; j <= 13; j++) {
@@ -27,9 +27,11 @@ for (let i = 0; i < 4; i++) {
 }
 Shuffle(deck); 
 
+// keeps track of hands played and hands won 
 let hp = { key: 0 }; 
 let hw = { key: 0 }; 
 
+// deals cards to player -- every 8 hands played, the deck gets reshuffled 
 function Deal(hp, deck) {
   if (hp.key % 8 == 0 && hp.key != 0) {
     for (let i = 0; i < 4; i++) {
@@ -108,6 +110,7 @@ function Deal(hp, deck) {
   }
 }
 
+// resets deck, hands played, and hands won 
 function Reset(hp, hw, deck) {
   hp.key = 0; 
   hw.key = 0;
@@ -144,6 +147,7 @@ function Reset(hp, hw, deck) {
   }
 }
 
+// when a player picks a blackjack move, determine if it is the correct and display stats
 function PlayerChoice(choice, hp, hw) {
   let dcard = document.getElementById("card2").getElementsByTagName("p")[0].innerHTML;
   switch(dcard) {
@@ -206,7 +210,7 @@ function PlayerChoice(choice, hp, hw) {
   document.getElementById("stats").innerHTML = "You have played " + hw.key + '/' + hp.key + " correctly!";
 }
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+// animates first card 
 function myMove1(callback) {
   let id = null;
   const elem = document.getElementById("animate");   
@@ -230,6 +234,7 @@ function myMove1(callback) {
   }
 }
 
+// animates second card 
 function myMove2(callback) {
   let id = null;
   const elem = document.getElementById("animate");   
@@ -252,6 +257,7 @@ function myMove2(callback) {
   }
 }
 
+// animates third card 
 function myMove3(callback) {
   let id = null;
   const elem = document.getElementById("animate");   
@@ -275,6 +281,7 @@ function myMove3(callback) {
   }
 }
 
+// animates fourth card 
 function myMove4(callback) {
   let id = null;
   const elem = document.getElementById("animate");   
@@ -299,6 +306,7 @@ function myMove4(callback) {
   }
 }
 
+// calls all animation functions in order 
 function myMove() {
   myMove1(() => {
     myMove2(() => {
@@ -309,6 +317,7 @@ function myMove() {
   });
 }
 
+// determines the statistically correct blackjack move 
 function CorrectMove(dcard, pcard1, pcard2) {
   if (dcard == 11 || dcard == 12 || dcard == 13) 
     dcard = 10; 
@@ -363,6 +372,7 @@ function CorrectMove(dcard, pcard1, pcard2) {
         break; 
     }
   }
+  // correct move if player has an ace 
   else if (pcard1 == 1 || pcard2 == 1) {
     switch (pcard1 + pcard2) {
       case 3:
@@ -400,6 +410,7 @@ function CorrectMove(dcard, pcard1, pcard2) {
         break; 
     }
   }
+  // correct move for every other hand
   else {
     switch (pcard1 + pcard2) {
       case 5:
@@ -448,6 +459,7 @@ function CorrectMove(dcard, pcard1, pcard2) {
   }
 }
 
+// used to shuffle deck 
 function Shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--){
     let j = Math.floor(Math.random() * (i + 1)); 
